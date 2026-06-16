@@ -1,0 +1,3 @@
+{
+    "verify cookies popup content": "SELECT CONTENT FROM CREATIO WHERE S_NO=1"
+}

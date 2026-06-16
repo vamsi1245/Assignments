@@ -1,0 +1,21 @@
+{
+    "app": {
+        "url": "http://accounts.creatio.com/login/alm",
+        "title": "Log in | Creatio",
+        "businessEmail": "bharattechacademy5@outlook.com",
+        "password": "BharathTechAcademy#1234"
+    },
+
+    "db":{
+        "host":"localhost",
+        "port":5432,
+        "password":"admin",
+        "user":"postgres",
+        "database":"CREATIO"
+    },
+    "api":{
+        "base_url": "https://api.github.com",
+        "token" : "Bearer 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",
+        "owner" : "vamsi789v"
+    }
+}

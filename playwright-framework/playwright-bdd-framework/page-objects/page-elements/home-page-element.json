@@ -1,0 +1,12 @@
+{
+    "homePageHeader": "//span[text()='Application Hub']",
+    "userLink": "//span[text()='Users']",
+    "addUserButton": "//button[text()='+ Add user']",
+    "addBusinessEmail": "input[aria-label='Business email']",
+    "addRole": "input[aria-label='Role']",
+    "addRolDropdownOption":"//span[text()='option']/ancestor::mat-option",
+    "inviteButton": "//button[contains(@class,'crt-button')]",
+    "invitedUser": "//span[text()='Invited users']",
+    "profileIcon": "//span[contains(@class,'contact-photo') and text()='BT']",
+    "logoutButton": "//span[text()='Log out']"
+}

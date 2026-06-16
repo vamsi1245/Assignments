@@ -1,0 +1,48 @@
+{
+    "duplicateRepo": {
+        "requestType": "POST",
+        "endpoint": "user/repos",
+        "body": {
+            "name": "playwrightRepo2"
+        },
+        "expectdStatusCode": 422,
+        "expectedStatusMessage": "Unprocessable Entity",
+        "expectedErrorMessage": "Repository creation failed."
+    },
+    "validRepo": {
+        "requestType": "POST",
+        "endpoint": "user/repos",
+        "body": {
+            "name": "playwrightRepo6"
+        },
+        "expectdStatusCode": 201,
+        "expectedStatusMessage": "Created",
+        "expectedErrorMessage": null,
+        "name": "playwrightRepo6"
+    },
+    "getRepo": {
+        "requestType": "GET",
+        "endpoint": "repos/vamsi789v/playwrightRepo2",
+        "expectedStatusCode": 200,
+        "expectedStatusMessage": "OK",
+        "expectedErrorMessage": null,
+        "name": "playwrightRepo2"
+    },
+    "updateRepo": {
+        "requestType": "PATCH",
+        "endpoint": "repos/vamsi789v/playwrightRepo3",
+        "body": {
+            "name": "playwrightRepo3updated"
+        },
+        "expectedStatusCode": 200,
+        "expectedStatusMessage": "OK",
+        "expectedErrorMessage": null,
+        "name": "playwrightRepo3updated"
+    },
+    "deleteRepo": {
+        "requestType": "DELETE",
+        "endpoint": "repos/vamsi789v/playwrightRepo6",
+        "expectdStatusCode": 204,
+        "expectedStatusMessage": "No Content"
+    }
+}

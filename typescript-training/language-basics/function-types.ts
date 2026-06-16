@@ -22,6 +22,9 @@ function launchBrowserAndLogin(browser_name:string, url:string) :void{
     console.log("Click on the login button");
 }
 
+launchBrowserAndLogin("Chrome", "https://www.facebook.com/");
+
+
 //2. Arrow function / Lambda Function => The function is declared without any name, and the implementation will be written using an arrow mark. 
 
 //Syntax of arrow function
