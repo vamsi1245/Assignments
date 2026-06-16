@@ -1,0 +1,12 @@
+{
+    "loginPageHeader": "span.form-title",
+    "businessEmailInput": "input[aria-label=\"Business email\"]",
+    "passwordInput": "input[aria-label=\"Password\"]",
+    "loginButton": "crt-button.login-button",
+    "forgotPassword":"a.forgot-password-link",
+    "forgogotPasswordVerification":"//span[text()= 'Almost done!']",
+    "linkedLink":"img.icon-LinkedIn",
+    "googleLink":"img.icon-google",
+    "signUp":"crt-button.sign-up-button"
+    
+}

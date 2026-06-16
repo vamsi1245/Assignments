@@ -1,0 +1,248 @@
+{
+  "info": {
+    "_postman_id": "cf918b93-0a55-460f-9bb8-da5948da68f2",
+    "name": "Git API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55490484"
+  },
+  "item": [
+    {
+      "name": "Create a duplicate repository for the authenticated user",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "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",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{TOKEN}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"playwrightRepo\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/user/repos",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "user",
+            "repos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a valid repository for the authenticated user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"verify response code\", function(){\r",
+              "    pm.expect(pm.response.code).to.be.eql(422);\r",
+              "\r",
+              "});\r",
+              "\r",
+              "pm.test(\"verify response body\", function(){\r",
+              "   let responseBody= pm.response.json();\r",
+              "   pm.expect(responseBody.errors[0].message).to.eql(\"name already exists on this account\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"verify response time\", function(){\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"verify response message\" ,function(){\r",
+              "    pm.expect(pm.response.status).to.include(\"Unprocessable Entity\")\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "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",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"playwrightRepo3\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/user/repos",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "user",
+            "repos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get a repository with valid user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"verify response code\" , function(){\r",
+              "    pm.response.to.have.status(200);\r",
+              "})\r",
+              "\r",
+              "pm.test(\"verify response body\" , function(){\r",
+              "    pm.expect(pm.response.json().name).to.eql(\"playwrightRepo2\");\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{TOKEN}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/repos/{{OWNER}}/playwrightRepo2",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "repos",
+            "{{OWNER}}",
+            "playwrightRepo2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update a repository",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"verify status code\", function(){\r",
+              "    pm.expect(pm.response.code).to.eql(200)\r",
+              "})\r",
+              "\r",
+              "pm.test(\"verify response body\" , function(){\r",
+              "   let responseBody=pm.response.json()\r",
+              "    pm.expect(responseBody.name).to.eql(\"playwrightRepo2\")\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{TOKEN}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"private\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/repos/{{OWNER}}/playwrightRepo2",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "repos",
+            "{{OWNER}}",
+            "playwrightRepo2"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

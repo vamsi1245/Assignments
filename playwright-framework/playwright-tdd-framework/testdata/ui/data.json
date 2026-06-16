@@ -1,0 +1,47 @@
+{
+    "verify cookies popup content": {
+        "content": "We may use cookies and similar technologies to collect information about the ways you interact with and use the website"
+    },
+    "verify cookies selection buttons in cookies popup": {
+        "buttonName": [
+            "Allow all",
+            "Allow selection",
+            "Deny"
+        ]
+    },
+    "verify allow button in expanded view of cookies popup": {
+        "button": [
+            "Deny",
+            "Allow selection",
+            "Allow all"
+        ]
+    },
+    "verify login functionality with valid credentials": {
+        "businessEmail": "bharattechacademy5@outlook.com",
+        "password": "BharathTechAcademy#1234",
+        "applicationHeader": "Application Hub"
+    },
+    "verify login functionality with invalid credentials": {
+        "businessEmail": "bharattech5@outlook.com",
+        "password": "BharathTech#1234"
+    },
+    "verify adding a new user within the creatio application": {
+        "businessEmail": "bharattechacademy5@outlook.com",
+        "password": "BharathTechAcademy#1234",
+        "roleOption": "Administrator"
+    },
+    "verify forgot password link": {
+        "buttonName": [
+            "Allow all",
+            "Allow selection",
+            "Deny"
+        ]
+    },
+    "verify social media icons in login page": {
+        "buttonName": [
+            "Allow all",
+            "Allow selection",
+            "Deny"
+        ]
+    }
+}
